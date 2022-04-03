@@ -1,6 +1,7 @@
 #include <iostream>
 #include <math.h>
 
+// Stack Overflow 에러 해결방법 ->프로젝트 속성 -> 링커 -> 시스템 -> 스택 크기 늘림.
 class rotation {
 	int size;
 	int array[1000][1000]; // row//column 순서.
