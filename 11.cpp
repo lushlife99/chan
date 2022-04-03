@@ -3,7 +3,7 @@
 
 class rotation {
 	int size;
-	int array[1000][1000]; // row//column ¼ø¼­.
+	int array[1000][1000]; // row//column ìˆœì„œ.
 	int start, end;
 	int temp1, temp2, temp3, temp4;
 
@@ -12,9 +12,9 @@ public:
 	void print();
 	
 	
-	void right_row(int row); //°¡·Î
+	void right_row(int row); //ê°€ë¡œ
 	void left_row(int row);	
-	void up_col(int col);   //¼¼·Î
+	void up_col(int col);   //ì„¸ë¡œ
 	void down_col(int col);
 	void vertex(bool a);
 	
@@ -26,10 +26,10 @@ public:
 rotation::rotation(int n1) {
 	size = n1;
 	int p = 1;
-	start = 0;//¹è¿­ Å©±â ÁÙ¾îµé¶§ °¡ÀÛ ÀÛÀº ÀÎµ¦½º
-	end = size-1;//¹è¿­ Å©±â ÁÙ¾îµé ¶§ °¡Àå Å« ÀÎµ¦½º
+	start = 0;//ë°°ì—´ í¬ê¸° ì¤„ì–´ë“¤ë•Œ ê°€ì‘ ì‘ì€ ì¸ë±ìŠ¤
+	end = size-1;//ë°°ì—´ í¬ê¸° ì¤„ì–´ë“¤ ë•Œ ê°€ì¥ í° ì¸ë±ìŠ¤
 	temp1, temp2, temp3, temp4 = 0;
-	for (int i = 0; i < size; i++) {//¹è¿­ Ã¤¿ö³ÖÀ½.
+	for (int i = 0; i < size; i++) {//ë°°ì—´ ì±„ì›Œë„£ìŒ.
 		for (int k = 0; k < size; k++) {
 			array[i][k] = p;
 			p++;
@@ -93,7 +93,7 @@ void rotation::vertex(bool a) {
 	}
 }
 
-void rotation::right_rotating(int rep) {//È¦, Â¦ ³ª´²¼­.
+void rotation::right_rotating(int rep) {//í™€, ì§ ë‚˜ëˆ ì„œ.
 	if (size % 2 == 1) {
 		for (int i = 0; i < rep; i++) {
 			for (start; end - start != 0; start++) {
@@ -162,7 +162,7 @@ void rotation::left_rotating(int rep) {
 					}
 				}
 				save();
-				vertex(true);
+				vertex(false);
 
 			}
 			start = 0;
@@ -173,9 +173,9 @@ void rotation::left_rotating(int rep) {
 int main() {
 	int index;
 	int rep;
-	std::cout << "ÀÎµ¦½º ¼³Á¤: " << std::endl;
+	std::cout << "ì¸ë±ìŠ¤ ì„¤ì •: " << std::endl;
 	std::cin >> index;
-	std::cout << "¹İº¹ È½¼ö ¼³Á¤: " << std::endl;
+	std::cout << "ë°˜ë³µ íšŸìˆ˜ ì„¤ì •: " << std::endl;
 	std::cin >> rep;
 	rotation test(index);
 	test.print();
